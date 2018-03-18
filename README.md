@@ -9,7 +9,7 @@ This extension adds a tab to the customer view in admin that allows you to view 
 Requirements
 ------------
 - Magento >= 2.1.5 (until here I have tested until now)
-- PHP >= 5.5.0
+- PHP >= 5.6
 
 Support
 -------
