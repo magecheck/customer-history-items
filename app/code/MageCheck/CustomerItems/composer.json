@@ -1,0 +1,20 @@
+{
+    "name": "magecheck/customeritems",
+    "description": "MageCheck_CustomerItems gives you an extra customer tab that you can see your purchase history",
+    "require": {
+        "php": "~5.6.5|7.0.2|7.0.4|~7.0.6"
+    },
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": [
+        "Non-Commercial"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "MageCheck\\MageCheck_CustomerItems\\": ""
+        }
+    }
+}

@@ -1,0 +1,40 @@
+<form method="post">
+    <input value="<?php echo $this->getRequest()->getParam('from') ? $this->getRequest()->getParam('from') : date('Y-m-d', time() - 7 * 24 * 60 * 60) ?>" name="startDate" type="datetime" id="customer_items_grid_filter_from" class="datepicker">
+    <input value="<?php echo $this->getRequest()->getParam('to') ? $this->getRequest()->getParam('to') : date('Y-m-d') ?>" name="endDate" type="datetime" id="customer_items_grid_filter_to" class="datepicker"> 
+    <button class="button" type="button" onclick="customerItemsCheck()">Filter</button>
+
+    <script type="text/javascript">
+        if (typeof customerItemsCheck === 'undefined' && typeof customerItemsCheck !== 'function') {
+            var customerItemsCheck = function () {
+                customeritems_view_compared_gridJsObject.addVarToUrl('from', document.getElementById('customer_items_grid_filter_from').value);
+                customeritems_view_compared_gridJsObject.addVarToUrl('to', document.getElementById('customer_items_grid_filter_to').value);
+                customeritems_view_compared_gridJsObject.doFilter();
+            }
+        }
+        require([
+            "jquery",
+            "mage/calendar"
+        ], function ($) {
+            datepicker(document.querySelector('#customer_items_grid_filter_from'))
+            datepicker(document.querySelector('#customer_items_grid_filter_to'))
+            function datepicker(input) {
+                $(input).datepicker({
+                    prevText: '&#x3c;prev', prevStatus: '',
+                    prevJumpText: '&#x3c;&#x3c;', prevJumpStatus: '',
+                    nextText: 'next&#x3e;', nextStatus: '',
+                    nextJumpText: '&#x3e;&#x3e;', nextJumpStatus: '',
+                    monthNames: ['January', 'February', 'March', 'April', 'May', 'June',
+                        'July', 'August', 'September', 'October', 'November', 'December'],
+                    monthNamesShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                        'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    dayNames: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+                    dayNamesShort: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+                    dayNamesMin: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+                    showMonthAfterYear: false,
+                    dateFormat: 'yy-mm-dd'
+                }
+                );
+            }
+        });
+    </script>
+</form>
