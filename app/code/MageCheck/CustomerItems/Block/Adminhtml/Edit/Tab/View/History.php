@@ -107,7 +107,9 @@ class History extends \Magento\Backend\Block\Widget\Grid\Extended {
                          ->columns('SUM(main_table.qty_ordered) as qty_ordered')
                          ->columns('SUM(main_table.row_total_incl_tax) as total')
                          ->columns('COUNT(DISTINCT(orders.entity_id)) AS order_cnt')
+                         ->where("main_table.parent_item_id is NULL")
                          ->group('main_table.item_id');
+
         $this->setCollection($collection);
         return parent::_prepareCollection();
     }
