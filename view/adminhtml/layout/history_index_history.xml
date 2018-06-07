@@ -13,6 +13,6 @@
 -->
 <layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/layout_generic.xsd">
     <container name="root" label="Root">
-        <block class="MageCheck\CustomerItems\Block\Adminhtml\Edit\Tab\View\History" name="customer.edit.tab.history"/>
+        <block class="MageCheck\CustomerHistoryItems\Block\Adminhtml\Edit\Tab\View\History" name="customer.edit.tab.history"/>
     </container>
 </layout>

@@ -15,7 +15,7 @@
       xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="customer_form">
-            <block class="MageCheck\CustomerItems\Block\Adminhtml\Edit\Tab\History" name="customer_edit_tab_history" />
+            <block class="MageCheck\CustomerHistoryItems\Block\Adminhtml\Edit\Tab\History" name="customer_edit_tab_history" />
         </referenceBlock>
     </body>
 </page>

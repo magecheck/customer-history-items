@@ -15,7 +15,7 @@ namespace MageCheck\CustomerHistoryItems\Block\Adminhtml\Edit\Tab;
 
 class CustomForm extends \Magento\Framework\View\Element\Template {
 
-    const template = "MageCheck_CustomerItems::form.phtml";
+    const template = "MageCheck_CustomerHistoryItems::form.phtml";
 
     /**
      * Construct

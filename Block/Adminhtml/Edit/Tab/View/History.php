@@ -38,8 +38,6 @@ class History extends \Magento\Backend\Block\Widget\Grid\Extended {
      */
     protected $resource;
 
-    //protected $_template='MageCheck_CustomerItems::grid.phtml';
-
     /**
      * Constructor
      *
@@ -64,7 +62,7 @@ class History extends \Magento\Backend\Block\Widget\Grid\Extended {
         $this->resource = $resource;
         parent::__construct($context, $backendHelper, $data);
         $this->setEmptyText(__('No items found'));
-        $this->setTemplate("MageCheck_CustomerItems::grid.phtml");
+        $this->setTemplate("MageCheck_CustomerHistoryItems::grid.phtml");
         $this->setUseAjax(true);
         
     }
@@ -169,7 +167,7 @@ class History extends \Magento\Backend\Block\Widget\Grid\Extended {
      */
     public function getCustomForm()
     {
-        return $this->getLayout()->createBlock('MageCheck\CustomerItems\Block\Adminhtml\Edit\Tab\CustomForm')->toHtml();
+        return $this->getLayout()->createBlock('MageCheck\CustomerHistoryItems\Block\Adminhtml\Edit\Tab\CustomForm')->toHtml();
     }
 
 }
