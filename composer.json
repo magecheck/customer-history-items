@@ -8,11 +8,9 @@
             "role": "Magento Certified Developer"
         }
     ],
-    "version": "1.0.3",
     "require": {
-        "php": "^7.0"
+        "php": ">=7.0"
     },
-    "minimum-stability":"stable",
     "autoload": {
         "files": [
             "registration.php"

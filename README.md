@@ -18,7 +18,7 @@ If you encounter any problems or bugs, please create an issue on [GitHub](https:
 Installation with composer
 -------
 
-    composer require "magecheck/customer-history-items":"1.0.3"
+    composer require magecheck/customer-history-items
     php bin/magento setup:upgrade
     php bin/magento cache:flush
     php bin/magento cache:clean
