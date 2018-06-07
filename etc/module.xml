@@ -1,4 +1,16 @@
 <?xml version="1.0"?>
+<!--
+/**
+ * MageCheck
+ * Customer History Items Purchase History Tab
+ *
+ * @author Chiriac Victor
+ * @since 15.03.2018
+ * @category   MageCheck
+ * @package    MageCheck_CustomerHistoryItems
+ * @copyright  Copyright (c) 2017-2018 Mage Check (http://www.magecheck.com/)
+ */
+-->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/Module/etc/module.xsd">
     <module name="MageCheck_CustomerItems" setup_version="1.0.0" schema_version="1.0.0">
         <sequence>

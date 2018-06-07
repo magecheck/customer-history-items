@@ -2,16 +2,16 @@
 
 /**
  * MageCheck
- * Customer Items Purchase History Tab
+ * Customer History Items Purchase History Tab
  *
  * @author Chiriac Victor
  * @since 15.03.2018
  * @category   MageCheck
- * @package    MageCheck_CustomerItems
- * @copyright  Copyright (c) 2017 Mage Check (http://www.magecheck.com/)
+ * @package    MageCheck_CustomerHistoryItems
+ * @copyright  Copyright (c) 2017-2018 Mage Check (http://www.magecheck.com/)
  */
 
-namespace MageCheck\CustomerItems\Block\Adminhtml\Edit\Tab;
+namespace MageCheck\CustomerHistoryItems\Block\Adminhtml\Edit\Tab;
 
 class CustomForm extends \Magento\Framework\View\Element\Template {
 

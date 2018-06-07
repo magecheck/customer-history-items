@@ -2,16 +2,16 @@
 
 /**
  * MageCheck
- * Customer Items Purchase History Tab
+ * Customer History Items Purchase History Tab
  *
  * @author Chiriac Victor
  * @since 15.03.2018
  * @category   MageCheck
- * @package    MageCheck_CustomerItems
- * @copyright  Copyright (c) 2017 Mage Check (http://www.magecheck.com/)
+ * @package    MageCheck_CustomerHistoryItems
+ * @copyright  Copyright (c) 2017-2018 Mage Check (http://www.magecheck.com/)
  */
 
-namespace MageCheck\CustomerItems\Block\Adminhtml\Edit\Tab\View;
+namespace MageCheck\CustomerHistoryItems\Block\Adminhtml\Edit\Tab\View;
 
 use Magento\Customer\Controller\RegistryConstants;
 use Magento\Framework\App\ResourceConnection;
@@ -50,8 +50,14 @@ class History extends \Magento\Backend\Block\Widget\Grid\Extended {
      * @param array $data
      */
     public function __construct(
-    \Magento\Backend\Block\Template\Context $context, \Magento\Backend\Helper\Data $backendHelper, \Magento\Sales\Model\ResourceModel\Order\Item\CollectionFactory $collectionFactory, \Magento\Framework\Registry $coreRegistry, ResourceConnection $resource, array $data = []
-    ) {
+        \Magento\Backend\Block\Template\Context $context,
+        \Magento\Backend\Helper\Data $backendHelper,
+        \Magento\Sales\Model\ResourceModel\Order\Item\CollectionFactory $collectionFactory,
+        \Magento\Framework\Registry $coreRegistry,
+        ResourceConnection $resource,
+        array $data = []
+    )
+    {
 
         $this->_coreRegistry = $coreRegistry;
         $this->_collectionFactory = $collectionFactory;
@@ -60,6 +66,7 @@ class History extends \Magento\Backend\Block\Widget\Grid\Extended {
         $this->setEmptyText(__('No items found'));
         $this->setTemplate("MageCheck_CustomerItems::grid.phtml");
         $this->setUseAjax(true);
+        
     }
 
     /**
@@ -67,7 +74,8 @@ class History extends \Magento\Backend\Block\Widget\Grid\Extended {
      *
      * @return void
      */
-    protected function _construct() {
+    protected function _construct()
+    {
         parent::_construct();
         $this->setDefaultSort('created_at', 'desc');
         $this->setSortable(true);
@@ -76,7 +84,11 @@ class History extends \Magento\Backend\Block\Widget\Grid\Extended {
         $this->setEmptyText(true);
     }
 
-    protected function _prepareGrid() {
+    /**
+     * {@inheritdoc}
+     */
+    protected function _prepareGrid()
+    {
         $this->setId('customeritems_view_compared_grid' . $this->getWebsiteId());
         parent::_prepareGrid();
     }
@@ -84,20 +96,23 @@ class History extends \Magento\Backend\Block\Widget\Grid\Extended {
     /**
      * {@inheritdoc}
      */
-    protected function _preparePage() {
+    protected function _preparePage()
+    {
         $this->getCollection()->setPageSize(5)->setCurPage(1);
     }
 
     /**
      * {@inheritdoc}
      */
-    protected function _prepareCollection() {
+    protected function _prepareCollection()
+    {
         $collection = $this->_collectionFactory->create();
         $collection->getSelect()
                 ->join(array('orders' => $this->resource->getTableName('sales_order')), 'orders.entity_id = main_table.order_id', array('orders.customer_id as customer_id'));
         $collection->addFieldToFilter('customer_id', $this->_coreRegistry->registry(RegistryConstants::CURRENT_CUSTOMER_ID));
 
-        if ($this->getRequest()->getParam('from') && $this->getRequest()->getParam('to')) {
+        if ($this->getRequest()->getParam('from') && $this->getRequest()->getParam('to'))
+        {
             $collection->getSelect()->where("main_table.created_at > '{$this->getRequest()->getParam('from')}' AND main_table.created_at < '{$this->getRequest()->getParam('to')}'");
         }
 
@@ -117,7 +132,8 @@ class History extends \Magento\Backend\Block\Widget\Grid\Extended {
     /**
      * {@inheritdoc}
      */
-    protected function _prepareColumns() {
+    protected function _prepareColumns()
+    {
         $this->addColumn('sku', ['header' => __('SKU'),'index' => 'sku','type' => 'string','width' => '100px']);
         $this->addColumn('name', ['header' => __('Name'),'index' => 'name']);
         $this->addColumn('order_cnt', ['header' => __('Number Of Orders'),'index' => 'order_cnt']);
@@ -134,14 +150,16 @@ class History extends \Magento\Backend\Block\Widget\Grid\Extended {
      *
      * @SuppressWarnings(PHPMD.BooleanGetMethodName)
      */
-    public function getHeadersVisibility() {
+    public function getHeadersVisibility()
+    {
         return $this->getCollection()->getSize() >= 0;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getRowUrl($row) {
+    public function getRowUrl($row)
+    {
         return $this->getUrl('catalog/product/edit', ['id' => $row->getProductId()]);
     }
 
@@ -149,7 +167,8 @@ class History extends \Magento\Backend\Block\Widget\Grid\Extended {
      * Return the Form with from and to filters
      * @return type
      */
-    public function getCustomForm() {
+    public function getCustomForm()
+    {
         return $this->getLayout()->createBlock('MageCheck\CustomerItems\Block\Adminhtml\Edit\Tab\CustomForm')->toHtml();
     }
 

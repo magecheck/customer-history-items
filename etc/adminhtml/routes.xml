@@ -1,8 +1,14 @@
 <?xml version="1.0"?>
 <!--
 /**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
+ * MageCheck
+ * Customer History Items Purchase History Tab
+ *
+ * @author Chiriac Victor
+ * @since 15.03.2018
+ * @category   MageCheck
+ * @package    MageCheck_CustomerHistoryItems
+ * @copyright  Copyright (c) 2017-2018 Mage Check (http://www.magecheck.com/)
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../lib/internal/Magento/Framework/App/etc/routes.xsd">

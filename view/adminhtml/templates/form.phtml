@@ -1,3 +1,15 @@
+<?php 
+/**
+ * MageCheck
+ * Customer History Items Purchase History Tab
+ *
+ * @author Chiriac Victor
+ * @since 15.03.2018
+ * @category   MageCheck
+ * @package    MageCheck_CustomerHistoryItems
+ * @copyright  Copyright (c) 2017-2018 Mage Check (http://www.magecheck.com/)
+ */
+?>
 <form method="post">
     <input value="<?php echo $this->getRequest()->getParam('from') ? $this->getRequest()->getParam('from') : date('Y-m-d', time() - 7 * 24 * 60 * 60) ?>" name="startDate" type="datetime" id="customer_items_grid_filter_from" class="datepicker">
     <input value="<?php echo $this->getRequest()->getParam('to') ? $this->getRequest()->getParam('to') : date('Y-m-d') ?>" name="endDate" type="datetime" id="customer_items_grid_filter_to" class="datepicker"> 

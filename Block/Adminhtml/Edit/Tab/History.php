@@ -2,16 +2,16 @@
 
 /**
  * MageCheck
- * Customer Items Purchase History Tab
+ * Customer History Items Purchase History Tab
  *
  * @author Chiriac Victor
  * @since 15.03.2018
  * @category   MageCheck
- * @package    MageCheck_CustomerItems
- * @copyright  Copyright (c) 2017 Mage Check (http://www.magecheck.com/)
+ * @package    MageCheck_CustomerHistoryItems
+ * @copyright  Copyright (c) 2017-2018 Mage Check (http://www.magecheck.com/)
  */
 
-namespace MageCheck\CustomerItems\Block\Adminhtml\Edit\Tab;
+namespace MageCheck\CustomerHistoryItems\Block\Adminhtml\Edit\Tab;
 
 use Magento\Customer\Controller\RegistryConstants;
 use Magento\Ui\Component\Layout\Tabs\TabInterface;
@@ -19,7 +19,8 @@ use Magento\Ui\Component\Layout\Tabs\TabInterface;
 /**
  * Customer account form block
  */
-class History extends \Magento\Backend\Block\Template implements TabInterface {
+class History extends \Magento\Backend\Block\Template implements TabInterface
+{
 
     /**
      * Core registry
@@ -34,8 +35,11 @@ class History extends \Magento\Backend\Block\Template implements TabInterface {
      * @param array $data
      */
     public function __construct(
-    \Magento\Backend\Block\Template\Context $context, \Magento\Framework\Registry $registry, array $data = []
-    ) {
+        \Magento\Backend\Block\Template\Context $context,
+        \Magento\Framework\Registry $registry,
+        array $data = []
+    )
+    {
         $this->_coreRegistry = $registry;
         parent::__construct($context, $data);
     }
@@ -43,29 +47,34 @@ class History extends \Magento\Backend\Block\Template implements TabInterface {
     /**
      * @return string|null
      */
-    public function getCustomerId() {
+    public function getCustomerId()
+    {
         return $this->_coreRegistry->registry(RegistryConstants::CURRENT_CUSTOMER_ID);
     }
 
     /**
      * @return \Magento\Framework\Phrase
      */
-    public function getTabLabel() {
+    public function getTabLabel()
+    {
         return __('Customer Items');
     }
 
     /**
      * @return \Magento\Framework\Phrase
      */
-    public function getTabTitle() {
+    public function getTabTitle()
+    {
         return __('Customer Items');
     }
 
     /**
      * @return bool
      */
-    public function canShowTab() {
-        if ($this->getCustomerId()) {
+    public function canShowTab()
+    {
+        if ($this->getCustomerId())
+        {
             return true;
         }
         return false;
@@ -74,8 +83,10 @@ class History extends \Magento\Backend\Block\Template implements TabInterface {
     /**
      * @return bool
      */
-    public function isHidden() {
-        if ($this->getCustomerId()) {
+    public function isHidden() 
+    {
+        if ($this->getCustomerId())
+        {
             return false;
         }
         return true;
@@ -86,7 +97,8 @@ class History extends \Magento\Backend\Block\Template implements TabInterface {
      *
      * @return string
      */
-    public function getTabClass() {
+    public function getTabClass()
+    {
         return '';
     }
 
@@ -95,7 +107,8 @@ class History extends \Magento\Backend\Block\Template implements TabInterface {
      *
      * @return string
      */
-    public function getTabUrl() {
+    public function getTabUrl()
+    {
         return $this->getUrl('history/*/history', ['_current' => true]);
     }
 
@@ -104,7 +117,8 @@ class History extends \Magento\Backend\Block\Template implements TabInterface {
      *
      * @return bool
      */
-    public function isAjaxLoaded() {
+    public function isAjaxLoaded()
+    {
         return true;
     }
 
