@@ -1,4 +1,4 @@
-# magento2-customer-history-items-tab
+# magecheck/customer-history-items
 MageCheck - Magento 2 Customer History Items Tab
 
 ------------
