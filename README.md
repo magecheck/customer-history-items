@@ -23,7 +23,7 @@ Installation
 
 After you added the code to your app/code inside the project you open your terminal and go to your project root folder and just run the following commands:
 
-    php bin/magento  module:enable MageCheck_CustomerItems
+    php bin/magento module:enable MageCheck_CustomerItems
     php bin/magento setup:upgrade
     php bin/magento cache:flush
     php bin/magento cache:clean
