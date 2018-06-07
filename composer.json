@@ -8,7 +8,7 @@
             "role": "Magento Certified Developer"
         }
     ],
-    "version": "1.0.0",
+    "version": "1.0.3",
     "require": {
         "php": "^7.0"
     },

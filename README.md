@@ -15,15 +15,10 @@ Support
 -------
 If you encounter any problems or bugs, please create an issue on [GitHub](https://github.com/magecheck/customer-history-items/issues).
 
-Installation
+Installation with composer
 -------
 
-- Download and add files inside the root of the project
-
-
-After you added the code to your app/code inside the project you open your terminal and go to your project root folder and just run the following commands:
-
-    php bin/magento module:enable MageCheck_CustomerHistoryItems
+    composer require "magecheck/customer-history-items":"1.0.3"
     php bin/magento setup:upgrade
     php bin/magento cache:flush
     php bin/magento cache:clean
