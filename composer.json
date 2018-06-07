@@ -9,8 +9,8 @@
         }
     ],
     "require": {
-        "php": ">=7.0",
-        "magecheck/customer-history-items": "^1.0"
+        "php": "^7.0",
+        "magento/framework": ">=2.0.2"
     },
     "autoload": {
         "files": [
