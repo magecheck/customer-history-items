@@ -13,7 +13,7 @@ Requirements
 
 Support
 -------
-If you encounter any problems or bugs, please create an issue on [GitHub](https://github.com/magecheck/magento2-customer-history-items-tab/issues).
+If you encounter any problems or bugs, please create an issue on [GitHub](https://github.com/magecheck/customer-history-items/issues).
 
 Installation
 -------
